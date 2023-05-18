@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import React, { useState } from 'react';
+import Main from './Main';
+import { Routes, Route } from 'react-router-dom';
+import SplashNav from "./SplashNav";
+import About from './About';
+import ShoppingCart from './ShoppingCart';
+
+const App = () => {
+
+  const [dark, setDark] = useState(false)
+ 
+  const toggleDark = () => {
+    
+    setDark(!dark) 
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div onMouseEnter={toggleDark} onMouseLeave={toggleDark} className={dark ? "App-dark" : "App"}>
+      <header className={dark ? "App-header-dark" : "App-header"}>
+       
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <span className="type2">{dark ? "[ scroll down ]" : "[typetype]"}</span>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        
+         <h2>{dark ? "[  ]" : "[]"}</h2>
+      </header> 
+      <SplashNav dark={dark} />
+      <Routes>
+          <Route path="/products" element={<Main />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/cart" element={<ShoppingCart />} />
+       </Routes>
     </div>
+   
   );
 }
 

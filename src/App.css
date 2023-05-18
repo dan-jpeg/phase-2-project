@@ -1,38 +1,390 @@
+
+
+
+
+@font-face {
+  font-family: "Case-bold";
+  src: url('./Fonts Desktop/CaseTrial-LightItalic.otf');
+
+}
+
+@font-face {
+  font-family: "Case";
+  src: url('./Fonts Desktop/CaseTrial-Light.otf');
+
+}
+
+@font-face {
+  font-family: "Case-italic";
+  src: url('./Fonts Desktop/CaseTrial-Italic.otf');
+
+}
+
+@font-face {
+  font-family: "Adieu-bold";
+  src: url('./gtfont/Adieu/GTFAdieuTRIAL-Bold.otf');
+
+}
+
+@font-face {
+  font-family: "Adieu-bold";
+  src: url('./gtfont/Adieu/GTFAdieuTRIAL-Bold.otf');
+
+}
+@font-face {
+  font-family: "Adieu";
+  src: url('./gtfont/Adieu/GTFAdieuTRIAL-Regular.otf');
+
+}
+
+@font-face {
+  font-family: "Agentur";
+  src: url('./gtfont/Agentur/GTFAgenturTRIAL-Regular.otf');
+
+}
+
+@font-face {
+  font-family: "Byrd-bold";
+  src: url('./gtfont/Byrd/GTFByrdTRIAL-Bold.otf');
+
+}
+
+@font-face {
+  font-family: "Byrd";
+  src: url('./gtfont/Byrd/GTFByrdTRIAL-Regular.otf');
+
+}
+
+@font-face {
+  font-family: "Chapter";
+  src: url('./gtfont/Chapter/GTFChapterTRIAL-Regular.otf');
+
+}
+
+@font-face {
+  font-family: "Ekstra";
+  src: url('./gtfont/Ekstra/GTFEkstraTRIAL-Regular.otf');
+
+}
+
+@font-face {
+  font-family: "Faxi";
+  src: url('./gtfont/Faxi/GTFFaxiTRIAL-Regular.otf');
+
+}
+
+@font-face {
+  font-family: "Figue";
+  src: url('./gtfont/Figue/GTFFigueTRIAL-Regular.otf');
+
+}
+
+
+@font-face {
+  font-family: "Good mono";
+  src: url('./gtfont/Good Mono/GTFGoodMonoTRIAL-Thin.otf')
+
+}
+
+@font-face {
+  font-family: "Good sans";
+  src: url('./gtfont/Good Sans/GTFGoodSansTRIAL-Regular.otf')
+
+}
+
+@font-face {
+  font-family: "Kosmos";
+  src: url('./gtfont/Kosmos/GTFKosmosTRIAL-Regular.otf')
+
+}
+
+@font-face {
+  font-family: "Kubik";
+  src: url('./gtfont/Kubik/GTFKubikTRIAL-Black.otf')
+
+}
+
+@font-face {
+  font-family: "Alti";
+  src: url('./gtfont/Alti/GTFAltiTRIAL-Regular.otf')
+
+}
+
+@font-face {
+  font-family: "PlakatGrotesk Bold";
+  src: url('./gtfont/Plakat Grotesk/GTFPlakatGroteskTRIAL-Bold.otf')
+
+}
+
+@font-face {
+  font-family: "PlakatGrotesk";
+  src: url('./gtfont/Plakat Grotesk/GTFPlakatGroteskTRIAL-Regular.otf')
+
+}
+
+@font-face {
+  font-family: "Okkult";
+  src: url('./gtfont/Okkult/GTFOkkultTRIAL-Black.otf')
+
+}
+
+@font-face {
+  font-family: "Opposit";
+  src: url('./gtfont/Opposit/GTFOppositTRIAL-Regular.otf')
+
+}
+
+@font-face {
+  font-family: "Tekno";
+  src: url('./gtfont/Tekno/GTFTeknoTRIAL-One.otf')
+}
+
+@font-face {
+  font-family: "Riposte Bold";
+  src: url('./gtfont/Riposte/GTFRiposteTRIAL-Bold.otf')
+}
+
+@font-face {
+  font-family: "Riposte";
+  src: url('./gtfont/Riposte/GTFRiposteTRIAL-Regular.otf')
+}
+
+@font-face {
+  font-family: "Rouleur";
+  src: url('./gtfont/Rouleur/GTFRouleurTRIAL-Black.otf')
+}
+
+
+
+
+
 .App {
+  font-family: Good-sans, monospace;
   text-align: center;
+  height: 300vh;
+  width: 100vw;
+  max-width: 1600px;
+  background-image: url(whiteBG2.png);
+  background-size: cover;
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-dark {
+  font-family: Good-sans, monospace;
+  text-align: center;
+  width: 100vw;
+  height: 300vh; 
+  max-width: 1600px;
+  background-image: url(blackBG2.png);
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
+
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(5px + 2vmin);
+  color: black;
+  padding-bottom: 2000px;
 }
 
+
+
+
+.App-header-dark {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  color: #FDFFE9;
+  padding-bottom: 2000px;
+}
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.main ul {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  list-style: none;
+} 
+
+.main ul li {
+  text-decoration: none;
+  cursor:  pointer;
 }
+
+.main ul li:hover {
+  text-decoration: none;
+  cursor:  pointer;
+  color: rgba(222, 210, 215, .86);
+
+}
+
+
+
+.logo {
+  height: 100px;
+  width: 100px;
+  padding-left: 3vh;
+
+}
+
+.main a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.main a:hover {
+  color: rgba(225, 209, 219, .88);
+}
+
+
+
+.main { 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 66px;
+  grid-row-gap:0 px; 
+  width: 100vw;
+  height: 89vh;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: #FDFFE9;
+  }
+
+
+.topNav { grid-area: 1 / 1 / 4 / 2;
+display: block; 
+text-align: left;
+font-size: calc(5px+1.5em);
+padding-top: 15vh;
+
+}
+
+  .logo { grid-area: 1 / 1 / 2 / 2; }
+  .div2 { grid-area: 3 / 2 / 6 / 6; } 
+  .div3 { grid-area: 4 / 2 / 5 / 6; } 
+  .div4 { 
+    
+    grid-area: 1 / 2 / 4 / 6; 
+    align-content: center;
+    font-size: calc(5px + 2vmin);
+  }
+  
+
+  .div5 { grid-area: 5 / 2 / 6 / 4; 
+    font-size: calc(20px+ 4vmin);} 
+
+  .div4 h1 {
+    font-size: calc(15px + 2.5vmin)
+  }
+
+
+  .font-name {
+    font-size: calc(10px + 3vmin);
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .try-font {
+    font-size: 4em;
+    height: 43vh;
+    width: 80vh;
+    text-align: center;
+    border: none;
+  }
+
+  .try-font:focus, input:focus {
+    outline: none;
+  }
+
+
+
+  .div6 { grid-area: 5 / 4 / 6 / 6; }
+
+  input[type=color] {
+    width: 44px;
+    height: 44px;
+    border: none;
+  }
+  
+  input[type=color]::-webkit-color-swatch {
+      border-radius: 50%;
+      border: 5px solid black;
+      background-color: black;
+  }
+
+  .splash-nav ul li a {
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+    font-size: calc(5px + .77em);
+    font-family: "Good mono";
+  }
+
+  .splash-nav-d ul li a {
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+    font-size: calc(5px + .77em);
+    font-family:"Good mono";
+  }
+
+  .splash-nav-d ul li a:hover {
+    text-decoration: none;
+    color: paleturquoise;
+    list-style-type: none;
+    font-size: calc(5px + .77em);
+    font-family:"Good mono";
+  }
+
+
+  .about-div {
+    font-family: "Good sans";
+    width: 100vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    background-color: black;
+    color:#FDFFE9;
+
+  }
+  .splash-nav ul {
+    list-style-type: none;
+  }
+  .splash-nav-d ul {
+    list-style-type: none;
+  }
+
+  .app NavLink {
+    color: white;
+  }
+
+  .app NavLink:hover {
+    color: bisque;
+  }
+
+  .cart ul {
+    list-style-type: none;
+  }
+
+  .cart {
+    padding-top: 50;
+    padding-bottom: 30vh;
+    background-color: black;
+    color: white;
+  }
