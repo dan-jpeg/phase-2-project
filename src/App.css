@@ -388,3 +388,15 @@ padding-top: 15vh;
     background-color: black;
     color: white;
   }
+
+  .placeholder-input {
+  
+    margin: 20px;
+    width: 10vw;
+    height: 2vw;
+    font-size: .1em;
+  }
+  
+  .placeholder-input: {
+    font-size: .2em
+  }

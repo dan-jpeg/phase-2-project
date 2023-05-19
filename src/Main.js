@@ -1,13 +1,12 @@
 
 import { useState, useEffect } from "react";
 import React from "react";
-import FontSelector from "./FontSelector";
 import TextInput from "./TextInput";
 import FontDisplay from "./FontDisplay";
 import SideNav from "./SideNav";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ShoppingCart from "./ShoppingCart";
 import { NavLink } from 'react-router-dom';
+import PlaceholderInput from "./PlaceholderInput";
 
 
 
@@ -26,16 +25,30 @@ function Main () {
     const [cartContents, setCartContents] = useState([])
     const [placeholders2, setPlaceholders2] = useState([])
     const [usePlaceholders2, setUsePlaceholders2] = useState(false);
+    const [newPlaceholderText, setNewPlaceholderText] = useState('add your verse to our poem here')
+    
+    
+    useEffect(() => {
+        fetch("http://localhost:4005/opening_lines")
+          .then(response => response.json())
+          .then(data => {
+            const openingLinesStrings = data.map(line => line.string);
+            setPlaceholders(openingLinesStrings)
+          });
+    
+        fetch("http://localhost:4005/assorted_notes")
+          .then(response => response.json())
+          .then(data => {
+            const notes = data.map(note => note.string);
+            setPlaceholders2(notes)
+          });
+      }, []);
+
 
     
-useEffect(() => { 
-    fetch("http://localhost:4004/data")
-    .then(response => response.json())
-    .then(data => {
-        setPlaceholders(data.opening_lines)
-        setPlaceholders2(data.assorted_notes)
-    })
-},[])
+    const convert = (data) => {
+        data.map(line => line.string)
+    }
 
     const handleChange = (e) => {
         setFontInput(e.target.value)
@@ -66,6 +79,29 @@ useEffect(() => {
 
    }
 
+   const handleInputChange = (e) => {
+    setNewPlaceholderText(e.target.value)
+    console.log(newPlaceholderText)
+   }
+
+   const addNewPlaceholder = (e) => {
+    e.preventDefault();
+
+    const newInput = {string: newPlaceholderText}
+    console.log(newInput)
+        fetch(' http://localhost:4005/assorted_notes', {
+                method: "POST", 
+                headers: {
+                  "Content-Type": "application/json",
+                  "Accept": "application/json"
+                },
+                body: JSON.stringify(newInput)
+              })
+              .then(rsp => rsp.json())
+              .then(nP => console.log(nP))
+
+   }
+
    const handleFontChange = (event) => {
     setFont(event.target.value);
     setFontInput(event.target.value)
@@ -73,6 +109,9 @@ useEffect(() => {
     console.log(event.target.value)
     
   }
+
+
+  
 
   const handleBackgroundChange = (event) => {
     const checked = event.target.checked;
@@ -112,7 +151,7 @@ const addToCart = () => {
         handleBackgroundChange={handleBackgroundChange}
         backgroundColor={backgroundColor}
       />
-
+       <PlaceholderInput newPlaceholderText={newPlaceholderText} handleInputChange={handleInputChange} addNewPlaceholder={addNewPlaceholder} />
 
     
 
@@ -122,8 +161,11 @@ const addToCart = () => {
         backgroundColor={backgroundColor}
         handleMouseLeave={handleMouseLeave}
          />
+
+
     <div className="div5">
    <p>dan crowley 2023</p>
+   
         </div>
         <div className="div6">
         
